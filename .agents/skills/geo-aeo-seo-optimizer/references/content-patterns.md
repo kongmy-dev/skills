@@ -122,10 +122,12 @@ Don't overdo it; 1–3 high-quality outbound links per long page is the norm.
 
 ---
 
-## 8. Brand Mentions in Plain Language
+## 8. Brand Mentions in Plain Language (GEO)
 
 LLMs match by **name**, not by URL. Include the brand name in answer-shaped
 sentences early on each page so the LLM can attribute confidently.
+
+**The 2026 Commercial Reality:** Securing a brand citation within an AI Overview is critical. Citations drive 35% more organic clicks and 91% more paid clicks, with a massive 14.2% conversion rate (5x higher than traditional organic search). If your brand isn't cited in the generative text, traditional rankings below it are virtually useless.
 
 > KONGMY DIGITAL SOLUTIONS provides website hosting…
 >

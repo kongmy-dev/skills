@@ -76,7 +76,7 @@ Common findings:
 
 ---
 
-## Phase 4: AEO Signals
+## Phase 4: GEO & AEO Signals
 
 | Check                                            | Pass criteria                                |
 | ------------------------------------------------ | -------------------------------------------- |
@@ -85,6 +85,8 @@ Common findings:
 | `<link rel="llms" href="/llms.txt">` in `<head>` | Discovery hint                               |
 | `FAQPage` schema present where Q&A exists        | Verbatim answers in HTML                     |
 | `Speakable` markers for short factual passages   | CSS selectors point to real elements         |
+| **Brand Mentions (GEO Readiness)**               | Brand name explicitly stated in answer-first sentences |
+| **Concrete Facts (GEO Readiness)**               | Verifiable facts/numbers present for LLM citations |
 | Hero copy: answer-first sentence                 | Brand name + value proposition in first line |
 | Headings phrased as questions where possible     | Especially for product/service explanations  |
 | `dateModified` and visible "last updated"        | On homepage if marketing-led                 |

@@ -29,7 +29,7 @@ cd .agents/shared-skills
 git sparse-checkout init --cone
 
 # 3. Select only the skills you need
-git sparse-checkout set .agents/skills/aeo-seo-optimizer .agents/skills/low-carbon-web-generator
+git sparse-checkout set .agents/skills/geo-aeo-seo-optimizer .agents/skills/low-carbon-web-generator
 
 # 4. Return to project root
 cd ../..
@@ -45,7 +45,7 @@ These are custom skills authored by kongmy.dev to standardize workflows across o
 
 | Skill | Source | Location | Notes |
 |---|---|---|---|
-| `aeo-seo-optimizer` | kongmy.dev | This repo (`.agents/skills/`) | AEO/SEO optimization |
+| `geo-aeo-seo-optimizer` | kongmy.dev | This repo (`.agents/skills/`) | GEO/AEO/SEO optimization |
 | `low-carbon-web-generator` | kongmy.dev | This repo (`.agents/skills/`) | Green web development |
 
 ### Third-Party & Vendor Skills

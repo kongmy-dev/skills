@@ -1,36 +1,33 @@
 ---
-name: aeo-seo-optimizer
+name: geo-aeo-seo-optimizer
 description: >-
-  Optimise a website for both classic search engines (SEO) and AI answer engines
-  (AEO / GEO / LLM-SEO). Three modes: scaffold meta + structured data on a new
-  site, audit an existing site for gaps, or extend a site with AEO-specific
-  signals (llms.txt, FAQPage, Speakable, WebSite.SearchAction). Use when the
-  user asks about "SEO", "AEO", "answer engine optimisation", "LLM SEO",
-  "structured data", "schema.org", "rich results", "Google snippet",
-  "AI search visibility", "ChatGPT search", "Perplexity citations",
+  Optimise a website for classic search engines (SEO), Answer Engines (AEO), 
+  and Generative Engines (GEO). Three modes: scaffold meta + structured data 
+  on a new site, audit an existing site for GEO/AEO gaps, or extend a site 
+  with AI-specific signals (llms.txt, FAQPage, Speakable, brand citations). Use 
+  when the user asks about "SEO", "AEO", "GEO", "answer engine optimisation", 
+  "generative engine optimization", "LLM SEO", "structured data", "schema.org", 
+  "AI Overviews", "AI search visibility", "ChatGPT search", "Perplexity citations",
   "llms.txt", "robots.txt for AI", "meta tags", or "sitemap".
 license: MIT
 compatibility: Framework-agnostic. Examples target Astro/Next.js/static HTML; principles apply to any stack.
 metadata:
   author: kongmy
-  version: '1.0'
+  version: '1.1'
 ---
 
-# AEO + SEO Optimiser
+# GEO + AEO + SEO Optimiser
 
-A unified skill for **classic SEO** (Google/Bing crawl + rank) and **AEO**
-(answer engines like ChatGPT Search, Perplexity, Google AI Overviews, Claude
-with web access). Both share the same foundation; AEO layers on additional
-machine-readable signals.
+A unified skill for **classic SEO** (Google/Bing crawl + rank), **AEO** (Featured Snippets, Voice Search), and **GEO** (Generative Engine Optimization for ChatGPT Search, Perplexity, Google AI Overviews). Securing brand citations is a binary necessity as traditional CTR has collapsed.
 
 ## Definitions
 
 | Term        | Meaning                                                                       |
 | ----------- | ----------------------------------------------------------------------------- |
 | **SEO**     | Optimisation for traditional crawlers and ranked SERP results.                |
-| **AEO**     | "Answer Engine Optimisation" — being **cited** in AI-generated answers.       |
-| **GEO**     | "Generative Engine Optimisation" — same idea, sometimes used interchangeably. |
-| **LLM SEO** | Casual umbrella term for AEO + content patterns LLMs prefer.                  |
+| **AEO**     | "Answer Engine Optimisation" — structuring content for direct, modular answers. |
+| **GEO**     | "Generative Engine Optimisation" — securing **brand citations** in AI overviews. |
+| **LLM SEO** | Casual umbrella term for AEO/GEO + content patterns LLMs prefer.              |
 
 ## Quick Start — Choose a Mode
 
@@ -50,14 +47,13 @@ machine-readable signals.
 2. Output a prioritised findings list (P0/P1/P2). **Do not auto-fix** unless
    the user asks — most SEO/AEO changes are content decisions.
 
-### Mode 3: AEO upgrade (existing SEO-ready site)
+### Mode 3: GEO / AEO upgrade (existing SEO-ready site)
 
 1. Add `llms.txt` + `llms-full.txt` (see [llms-txt.md](references/llms-txt.md)).
 2. Inject `FAQPage` schema for any Q&A content ([structured-data.md](references/structured-data.md#faqpage)).
 3. Add `Speakable` markers for short factual passages a voice assistant could read.
-4. Re-write hero / above-fold copy in **answer-first** style (see [content-patterns.md](references/content-patterns.md)).
-5. Confirm `robots.txt` policy for `GPTBot`, `ClaudeBot`, `PerplexityBot`,
-   `Google-Extended`, `CCBot`, `Bytespider`, `Amazonbot`.
+4. **GEO Citations**: Re-write hero / above-fold copy to ensure plain-language brand mentions and verifiable facts (see [content-patterns.md](references/content-patterns.md)).
+5. Confirm `robots.txt` policy for AI bots.
 
 ## Core Principles
 
@@ -101,12 +97,11 @@ when objects reference each other.
 Do you want your content cited in AI answers?
 ├── Yes → allow GPTBot, ClaudeBot, PerplexityBot, Google-Extended in robots.txt
 │        + publish llms.txt + llms-full.txt
-│        + add FAQPage / Speakable schema
+│        + optimize for GEO brand mentions
 └── No  → disallow them; consider an Allow-List for audit/quoting bots only
 ```
 
-The right answer for marketing/lead-gen sites is usually **yes**. AI engines
-become a discovery surface; opting out trades visibility for content control.
+**The Great Decoupling (2026):** For marketing/lead-gen sites, the answer is **mandatory yes**. Top-position organic CTR has collapsed from 7.3% to 1.6% when an AI Overview is present. Traditional rankings below the AI module are virtually useless if the brand is not cited. AI citations convert at 14.2% (5x higher than traditional organic) and drive 35% more organic clicks.
 
 ## Files Reference
 
