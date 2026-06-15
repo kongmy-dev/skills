@@ -1,0 +1,19 @@
+# carbon.txt Template
+#
+# Place this file at public/carbon.txt
+# Specification: https://carbontxt.org
+#
+# Replace all placeholder values ({{...}}) with your actual data.
+
+version = "0.4"
+last_updated = "{{YYYY-MM-DD}}"
+
+[org]
+disclosures = [
+  { doc_type = "web-page", url = "{{https://example.com/sustainability}}", title = "{{Sustainability Commitment}}" }
+]
+
+[upstream]
+services = [
+  { domain = "{{cloudflare.com}}", service_type = ["{{cdn}}", "{{shared-hosting}}"] }
+]
