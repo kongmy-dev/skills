@@ -1,0 +1,12 @@
+#!/bin/sh
+# Biome on the staged files only: fast enough that nobody disables it.
+set -u
+
+[ -z "$(git diff --cached --name-only --diff-filter=ACMR)" ] && exit 0
+
+if ! bunx biome check --staged --error-on-warnings --no-errors-on-unmatched; then
+  echo "" >&2
+  echo "pre-commit: Biome found problems in the staged files." >&2
+  echo "  fix: bunx biome check --staged --write" >&2
+  exit 1
+fi

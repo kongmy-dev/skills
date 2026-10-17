@@ -47,6 +47,7 @@ These are custom skills authored by kongmy.dev to standardize workflows across o
 |---|---|---|---|
 | `geo-aeo-seo-optimizer` | kongmy.dev | This repo (`.agents/skills/`) | GEO/AEO/SEO optimization |
 | `low-carbon-web-generator` | kongmy.dev | This repo (`.agents/skills/`) | Green web development |
+| `typescript-bun-standard` | kongmy.dev | This repo (`.agents/skills/`) | Coding standard for TypeScript/Bun projects |
 
 ### Third-Party & Vendor Skills
 

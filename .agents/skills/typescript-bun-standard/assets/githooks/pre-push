@@ -1,0 +1,40 @@
+#!/bin/sh
+# The fast, offline gates CI runs, before the push instead of after it.
+# Every gate runs and all failures are reported: stopping at the first red hides the next.
+
+only_deletes=""
+while read -r _local_ref local_sha _remote_ref _remote_sha; do
+  case "$local_sha" in
+    "" | *[!0]*) only_deletes=no ;;
+    *) [ -z "$only_deletes" ] && only_deletes=yes ;;
+  esac
+done
+if [ "$only_deletes" = yes ]; then
+  echo "pre-push: only deleting remote refs, nothing to gate"
+  exit 0
+fi
+
+failed=""
+gate() {
+  name="$1"
+  shift
+  echo "pre-push: $name"
+  "$@" || failed="$failed $name"
+}
+
+gate typecheck bun run typecheck
+gate lint bun run lint
+gate test bun run test
+gate deadcode bun run deadcode
+if grep -q '"build"' package.json; then
+  gate build bun run build
+fi
+
+[ -z "$failed" ] && exit 0
+
+echo "pre-push: FAILED:$failed" >&2
+if [ -n "$(git status --porcelain)" ]; then
+  echo "pre-push: the working tree is dirty, so a failure may belong to uncommitted work." >&2
+  echo "          Check whether the failing paths are in what you push: git diff --stat @{push}..HEAD" >&2
+fi
+exit 1
